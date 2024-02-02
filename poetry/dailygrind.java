@@ -18,3 +18,8 @@ while (away_the_hours) {
             break;
       }
 }
+try {
+     Thread.sleep(60000);
+} catch (InterruptedException e) {
+ // ignore
+)
