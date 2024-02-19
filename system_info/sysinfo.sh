@@ -1,4 +1,4 @@
-
+#! /bin/bash
 echo "System information has been gathered. Here's the summary: " > system_info.txt
 echo "Date and Time" | date +%x\ %T\ %Z >> system_info.txt
 echo "User: $(whoami)" >> system_info.txt
