@@ -1,0 +1,27 @@
+System information has been gathered. Here's the summary: 
+02/19/24 04:57:27 UTC
+User: diorburchfiel
+Current Working Directory: /home/diorburchfiel
+System Usage: 
+top - 04:57:27 up 13 days,  4:37,  3 users,  load average: 0.00, 0.00, 0.00
+Tasks: 108 total,   1 running, 107 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  3.1 sy,  0.0 ni, 96.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :    954.0 total,    488.5 free,    194.7 used,    270.9 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.    605.6 avail Mem 
+
+Disk Usage: 
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       9.6G  3.3G  6.3G  34% /
+devtmpfs        473M     0  473M   0% /dev
+tmpfs           478M     0  478M   0% /dev/shm
+tmpfs            96M  984K   95M   2% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           478M     0  478M   0% /sys/fs/cgroup
+/dev/loop0       64M   64M     0 100% /snap/core20/2105
+/dev/loop2       92M   92M     0 100% /snap/lxd/24061
+/dev/loop3       41M   41M     0 100% /snap/snapd/20671
+/dev/sda15      105M  6.1M   99M   6% /boot/efi
+/dev/loop4      374M  374M     0 100% /snap/google-cloud-cli/213
+/dev/loop5      352M  352M     0 100% /snap/google-cloud-cli/215
+/dev/loop1       64M   64M     0 100% /snap/core20/2182
+tmpfs            96M     0   96M   0% /run/user/1001
