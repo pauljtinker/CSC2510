@@ -15,3 +15,4 @@ echo "User: $(whoami)"
 echo "Current Working Directory: $PWD"
 
 echo "System Usage:"
+
