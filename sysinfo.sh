@@ -16,3 +16,4 @@ echo "Current Working Directory: $PWD"
 
 echo "System Usage:"
 
+ps aux | head -n 6
