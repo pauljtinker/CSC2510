@@ -13,3 +13,5 @@ echo "Date and Time: $(date '+%m/%d/%Y %H:%M:%S %Z')"
 echo "User: $(whoami)"
 
 echo "Current Working Directory: $PWD"
+
+echo "System Usage:"
