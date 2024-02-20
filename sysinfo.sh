@@ -11,3 +11,5 @@ echo "System information has been gathered. Here’s the summary:"
 echo "Date and Time: $(date '+%m/%d/%Y %H:%M:%S %Z')"
 
 echo "User: $(whoami)"
+
+echo "Current Working Directory: $PWD"
