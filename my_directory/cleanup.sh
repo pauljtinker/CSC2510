@@ -16,16 +16,6 @@ executables_file_moved=0
 data_file_moved=0
 unknown_file_moved=0
 
-#tracks average and total bytes of each folder
-total_bytes=$((image_byte_moved + documents_bytes_moved + pdf_byte_moved + executables_byte_moved + data_byte_moved + unknown_byte_moved ))
-total_average_bytes=$((total_bytes/6))
-total_files=$((image_file_moved + documents_file_moved + pdf_file_moved + executables_file_moved + data_file_moved + unknown_file_moved))
-img_avg=$((image_byte_moved / image_file_moved))
-doc_avg=$((documents_bytes_moved/documents_file_moved))
-pdf_avg=$((pdf_byte_moved/pdf_file_moved))
-exc_avg=$((executables_byte_moved/executables_file_moved))
-data_avg=$((data_byte_moved/data_file_moved))
-unknown_avg=$((unknown_byte_moved/unknown_file_moved))
 
 for x in images documents pdf executables data unknown
 do
@@ -78,6 +68,17 @@ for file in *; do
         esac
     fi
 done  
+
+#tracks average and total bytes of each folder
+total_bytes=$((image_byte_moved + documents_bytes_moved + pdf_byte_moved + executables_byte_moved + data_byte_moved + unknown_byte_moved ))
+total_average_bytes=$((total_bytes/6))
+total_files=$((image_file_moved + documents_file_moved + pdf_file_moved + executables_file_moved + data_file_moved + unknown_file_moved))
+img_avg=$((image_byte_moved / image_file_moved))
+doc_avg=$((documents_bytes_moved/documents_file_moved))
+pdf_avg=$((pdf_byte_moved/pdf_file_moved))
+exc_avg=$((executables_byte_moved/executables_file_moved))
+data_avg=$((data_byte_moved/data_file_moved))
+unknown_avg=$((unknown_byte_moved/unknown_file_moved))
 
 ## print for terminal
 echo "--------------------------- moving files ----------------------------------------------"
