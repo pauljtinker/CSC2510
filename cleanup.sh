@@ -1,8 +1,6 @@
 #!/bin/bash
 
-
-
-
+# Create directories
 for directories in images documents pdfs executables data unknown
  do
 	if [ ! -d "$directories" ]
@@ -13,3 +11,12 @@ for directories in images documents pdfs executables data unknown
 		echo "Directory already exists: $directories"
 	fi
 done
+
+# Iterate over files and move to directories
+
+# counters
+	FilesMoved=0
+	BytesMoved=0
+
+
+
