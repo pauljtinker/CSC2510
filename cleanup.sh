@@ -46,3 +46,10 @@ for file in *; do
 		esac
 
 mv "$file" "$category/"
+
+# update the counters
+((FilesMoved++))
+BytesMoved=$((BytesMoved + $(wc -c < "$category/$file")))
+
+fi 
+done
