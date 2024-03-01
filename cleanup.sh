@@ -45,11 +45,31 @@ for file in *; do
 			;;
 		esac
 
+
+echo "Moving files into directories..."
+
 mv "$file" "$category/"
 
 # update the counters
 ((FilesMoved++))
 BytesMoved=$((BytesMoved + $(wc -c < "$category/$file")))
 
+#update category counters
+((file_category[$category]++))
+bytes_category[$category]=$((bytes_category[$category] + $(wc -c < "$category/$file")))
+
 fi 
+done
+
+
+# Display the results
+echo "File move complete. Total files moved: $FilesMoved"
+echo "Total size of files moved: $BytesMoved"
+echo "Average file size: $((FilesMoved == 0 ? 0 : BytesMoved / FilesMoved)) bytes"
+
+for category in "${directories[@]}"; do
+	echo "Category: $category"
+	echo "	Files moved: ${file_category[$category]}"
+	echo "	Bytes moved: ${bytes_category[$category]}"
+	echo "	Average file size: $((file_category[$category] == 0 ? 0 : bytes_category[$category] / file_category[$category])) bytes"
 done
