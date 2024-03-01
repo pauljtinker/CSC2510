@@ -43,37 +43,37 @@ for file in *; do
         case "$files" in
             jpg|jpeg|png|gif)
                 image_bytes=$(stat -c %s "$file" )
-                $((image_file_moved++))
+                ((image_file_moved++))
                 image_byte_moved=$((image_byte_moved + image_bytes))
                 mv "$file" "images/" ;;
                 
             txt|docx|doc|pages|key|pptx|ppt|odt|md)
                 documents_bytes=$(stat -c %s "$file" )
                 documents_byte_moved=$((documents_byte_moved + documents_bytes))
-                $((documents_file_moved++))
+                ((documents_file_moved++))
                 mv "$file" "documents/" ;;
             pdf)
                 pdf_bytes=$(stat -c %s "$file" )
                 pdf_byte_moved=$((pdf_byte_moved + pdf_bytes))
-                $((pdf_file_moved++))
+                ((pdf_file_moved++))
                 mv "$file" "pdf/" ;;
             sh|exe)
                
                 if test -x "$file"; then
                     executables_bytes=$(stat -c %s "$file" )
                     executables_byte_moved=$((executables_byte_moved + executables_bytes))
-                    $((executables_file_moved++))
-                    mv "$file" "executables/"
+                    ((executables_file_moved++))
+                    mv "$file" executables/
                 fi ;;
             csv|xlsx|json)
                 data_bytes=$(stat -c %s "$file" )
                 data_byte_moved=$((data_byte_moved + data_bytes))
-                $((data_file_moved++))
+                ((data_file_moved++))
                 mv "$file" "data/" ;;
             *)
                 unknown_bytes=$(stat -c %s "$file" )
                 unknown_byte_moved=$((unknown_file_moved + unknown_bytes))
-                $((unknown_file_moved++))
+                ((unknown_file_moved++))
                 mv "$file" "unknown/" ;;
         esac
     fi
