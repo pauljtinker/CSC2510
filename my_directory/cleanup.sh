@@ -20,7 +20,7 @@ unknown_file_moved=0
 total_bytes=$((image_byte_moved + documents_bytes_moved + pdf_byte_moved + executables_byte_moved + data_byte_moved + unknown_byte_moved ))
 total_average_bytes=$((total_bytes/6))
 total_files=$((image_file_moved + documents_file_moved + pdf_file_moved + executables_file_moved + data_file_moved + unknown_file_moved))
-img_avg=$((image_byte_moved/image_file_moved))
+img_avg=$((image_byte_moved / image_file_moved))
 doc_avg=$((documents_bytes_moved/documents_file_moved))
 pdf_avg=$((pdf_byte_moved/pdf_file_moved))
 exc_avg=$((executables_byte_moved/executables_file_moved))
@@ -56,7 +56,7 @@ for file in *; do
                 pdf_bytes=$(stat -c %s "$file" )
                 pdf_byte_moved=$((pdf_byte_moved + pdf_bytes))
                 $((pdf_file_moved++))
-                mv "$file" "pdfs/" ;;
+                mv "$file" "pdf/" ;;
             sh|exe)
                
                 if test -x "$file"; then
@@ -81,32 +81,32 @@ done
 
 ## print for terminal
 echo "--------------------------- moving files ----------------------------------------------"
-echo "File move complete. Total files moved: $total_files"
+echo "File move complete. Total files moved: " $total_files
 echo "Total size of files moved: " $total_bytes " B"
 echo "Average file size:" $total_average_byte
 echo "*** Breakdown per file type ***"
 echo "---------------------------------------------------------------------------------------"
 echo "*** images *** "
     echo "Total move, $image_file_moved total size $image_byte_moved"
-    echo "Average file size $img_avg"
+    echo "Average file size " $img_avg
 #Average file size is total size / total move
 
 echo "*** documents ***"
     echo "Total move, $documents_file_moved total size $documents_byte_moved"
-    echo "Average file size $doc_avg"
+    echo "Average file size "$doc_avg
 
 echo "*** pdfs ***"
     echo "Total move, $pdf_file_moved total size $pdf_byte_moved"
-    echo "Average file size $pdf_avg"
+    echo "Average file size "$pdf_avg
 
 echo "*** executables ***"
     echo "Total move, $executables_file_moved total size $executables_byte_moved"
-    echo "Average file size $exc_avg"
+    echo "Average file size "$exc_avg
 
 echo "*** data ***"
     echo "Total move, $data_file_moved total size $data_byte_moved"
-    echo "Average file size $data_avg"
+    echo "Average file size "$data_avg
 
 echo "*** unknown ***"
     echo "Total move, $unknown_file_moved total size $unknown_byte_moved"
-    echo "Average file size $unknown_avg"
+    echo "Average file size "$unknown_avg
