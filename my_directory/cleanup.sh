@@ -85,7 +85,7 @@ echo "File move complete. Total files moved: $total_files"
 echo "Total size of files moved: " $total_bytes " B"
 echo "Average file size:" $total_average_byte
 echo "*** Breakdown per file type ***"
-echo "------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------------------"
 echo "*** images *** "
     echo "Total move, $image_file_moved total size $image_byte_moved"
     echo "Average file size $img_avg"
