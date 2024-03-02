@@ -81,7 +81,7 @@ for file in *; do
             #Check size of file first. This is done with stat.
             #stat -f%z "./file" for mac
             #stat -c %s for windows
-                mv -n "$file" /images
+                mv "$file" images/
             fi
             ;;
         txt | docx | pages | key| pptx | odt  | md)
@@ -93,7 +93,7 @@ for file in *; do
                 documents_total=$((documents_total+1))
                 t_bytes=$((t_bytes+temp_bytes))
                 do_bytes=$((do_bytes+temp_bytes))
-                mv -n "$file" /documents
+                mv "$file" documents/
             fi
             ;;
         pdf)
@@ -105,7 +105,7 @@ for file in *; do
                 pdfs_total=$((pdfs_total+1))
                 t_bytes=$((t_bytes+temp_bytes))
                 p_bytes=$((p_bytes+temp_bytes))
-                mv -n "$file" /pdfs
+                mv "$file" pdfs/
             fi
             ;;
         sh | exe)
@@ -120,7 +120,7 @@ for file in *; do
                 executables_total=$((executables_total+1))
                 t_bytes=$((t_bytes+temp_bytes))
                 e_bytes=$((e_bytes+temp_bytes))
-                mv -n "$file" /executables
+                mv "$file" executables/
             fi
             ;;
         csv | xlsx | json)
@@ -132,7 +132,7 @@ for file in *; do
                 data_total=$((data_total+1))
                 t_bytes=$((t_bytes+temp_bytes))
                 da_bytes=$((da_bytes+temp_bytes))
-                mv -n "$file" /data
+                mv "$file" data/
             fi
             ;;
         *)
@@ -144,7 +144,7 @@ for file in *; do
                 unknown_total=$((unknown_total+1))
                 t_bytes=$((t_bytes+temp_bytes))
                 u_bytes=$((u_bytes+temp_bytes))
-                mv -n "$file" /unknown
+                mv "$file" unknown/
             fi
             ;;
     esac
