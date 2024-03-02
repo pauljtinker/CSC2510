@@ -84,7 +84,7 @@ unknown_avg=$((unknown_byte_moved/unknown_file_moved))
 echo "--------------------------- moving files ----------------------------------------------"
 echo "File move complete. Total files moved: " $total_files
 echo "Total size of files moved: " $total_bytes " B"
-echo "Average file size:" $total_average_byte
+echo "Average file size:" $total_average_bytes
 echo "*** Breakdown per file type ***"
 echo "---------------------------------------------------------------------------------------"
 echo "*** images *** "
@@ -93,7 +93,7 @@ echo "*** images *** "
 #Average file size is total size / total move
 
 echo "*** documents ***"
-    echo "Total move, $documents_file_moved total size $documents_byte_moved"
+    echo "Total move, $documents_file_moved total size $documents_bytes_moved"
     echo "Average file size "$doc_avg
 
 echo "*** pdfs ***"
