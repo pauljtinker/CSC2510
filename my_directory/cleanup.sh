@@ -39,7 +39,7 @@ for file in *; do
                 
             txt|docx|doc|pages|key|pptx|ppt|odt|md)
                 documents_bytes=$(stat -c %s "$file" )
-                documents_byte_moved=$((documents_byte_moved + documents_bytes))
+                documents_bytes_moved=$((documents_byte_moved + documents_bytes))
                 ((documents_file_moved++))
                 mv "$file" "documents/" ;;
             pdf)
