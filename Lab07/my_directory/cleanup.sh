@@ -15,7 +15,7 @@ p_bytes=0
 e_bytes=0
 da_bytes=0
 u_bytes=0
-if [ -d images ] #This should run for every directory.
+if [[ -d images ]] #This should run for every directory.
 then
     echo "Images exists, skipping creation."
 else
@@ -23,7 +23,7 @@ else
     echo "Images has been created."
 fi
 
-if [ -d documents ]
+if [[ -d documents ]]
 then
     echo "Documents exists, skipping creation."
 else
@@ -31,7 +31,7 @@ else
     echo "Documents has been created."
 fi
 
-if [ -d pdfs ]
+if [[ -d pdfs ]]
 then
     echo "pdfs exists, skipping creation."
 else
@@ -39,7 +39,7 @@ else
     echo "pdfs has been created."
 fi
 
-if [ -d executables ]
+if [[ -d executables ]]
 then
     echo "Executables exists, skipping creation."
 else
@@ -47,7 +47,7 @@ else
     echo "Executables has been created."
 fi
 
-if [ -d data ]
+if [[ -d data ]]
 then
     echo "Data exists, skipping creation."
 else
@@ -55,7 +55,7 @@ else
     echo "Data has been created."
 fi
 
-if [ -d unknown ]
+if [[ -d unknown ]]
 then
     echo "Unknown exists, skipping creation."
 else
@@ -70,7 +70,7 @@ for file in *; do
     Extension="${file##*.}"
     case "$Extension" in
         jpg | jpeg | png | gif)
-            if [ -d "$file" ] #This should prevent the directories from getting moved around.
+            if [[ -d "$file" ]] #This should prevent the directories from getting moved around.
             then
                 continue
             else
@@ -85,7 +85,7 @@ for file in *; do
             fi
             ;;
         txt | docx | pages | key| pptx | odt  | md)
-            if [ -d "$file" ]
+            if [[ -d "$file" ]]
             then
                 continue
             else
@@ -97,7 +97,7 @@ for file in *; do
             fi
             ;;
         pdf)
-            if [ -d "$file" ]
+            if [[ -d "$file" ]]
             then
                 continue
             else
@@ -109,10 +109,10 @@ for file in *; do
             fi
             ;;
         sh | exe)
-            if [ -d "$file" ] 
+            if [[ -d "$file" ]] 
             then
                 continue #This single colon should just skip the else statement in the loop, so the cleanup.sh file is completely ignored. continue
-            elif [ "$file" == "cleanup.sh" ] #This should make it so that it will not move cleanup.sh
+            elif [[ "$file" == "cleanup.sh" ]] #This should make it so that it will not move cleanup.sh
             then
                 continue
             else
@@ -124,7 +124,7 @@ for file in *; do
             fi
             ;;
         csv | xlsx | json)
-            if [ -d "$file" ]
+            if [[ -d "$file" ]]
             then
                 continue
             else
@@ -136,7 +136,7 @@ for file in *; do
             fi
             ;;
         *)
-            if [ -d "$file" ]
+            if [[ -d "$file" ]]
             then
                 continue
             else
