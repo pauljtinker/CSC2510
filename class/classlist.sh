@@ -24,4 +24,36 @@ do
     fi
 done <$1
 
-echo "The username does not exist." 
+while : #Will loop until one of the exit statements within it is ran.
+do
+    read -p "That username is not on the list. Would you like to add it?" answer_One
+    case "$answer_One" in
+        'N' | 'n' | 'No' | 'no')
+        exit 0
+        ;;
+        'Y' | 'y' | 'Yes' | 'yes')
+        echo "$2" >> $1
+        while :
+        do
+            read -p "Would you like to alphabetize the new list." answer_Two
+            case "$answer_Two" in
+                'N' | 'n' | 'No' | 'no')
+                exit 0
+                ;;
+                'Y' | 'y' | 'Yes' | 'yes')
+                sort $1 > "updatedclasslist.txt" #This is a placeholder file that will be organized.
+                rm $1 #This will remove the old file.
+                mv "updatedclasslist.txt" $1 #This will change the name of the placeholder file so it looks like the old one.
+                exit 0
+                ;;
+                *)
+                echo "Invalid input, please enter the response in the form of yes or no."
+                ;;
+            esac
+        done
+        ;;
+        *)
+        echo "Invalid input, please enter the response in the form of yes or no."
+        ;;
+        esac
+done
