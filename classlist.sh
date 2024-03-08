@@ -43,3 +43,14 @@ case $answer in
 					;;
 			esac
 		done
+
+		exit 0
+		;;
+	[Nn]*)
+		exit 0
+		;;
+	*)
+		echo "Invalid input. Please enter Y or N."
+		;;
+	esac
+done
