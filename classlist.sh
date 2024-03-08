@@ -22,3 +22,24 @@ if [ -n "$line_number" ]; then
 else
 	while true; do
 		read -p "Would you like to add $username to $file? (Y/N): " answer
+
+case $answer in 
+	[Yy]*)
+		echo "username" >> "$file"
+
+		while true; do
+			read -p "Do you want $file to be in alphabetical order? (Y/N): " sort_answer
+
+			case $sort_answer in
+				[Yy])
+					sort -o "$file" "$file"
+					break
+					;;
+				[Nn])
+					break
+					;;
+				*)
+					echo "Invalid input. Please enter Y or N."
+					;;
+			esac
+		done
