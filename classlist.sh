@@ -25,7 +25,7 @@ else
 
 case $answer in 
 	[Yy]*)
-		echo "username" >> "$file"
+		echo "$username" >> "$file"
 
 		while true; do
 			read -p "Do you want $file to be in alphabetical order? (Y/N): " sort_answer
@@ -52,5 +52,6 @@ case $answer in
 	*)
 		echo "Invalid input. Please enter Y or N."
 		;;
-	esac
-done
+		esac
+	done
+fi
