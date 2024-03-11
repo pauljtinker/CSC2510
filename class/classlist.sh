@@ -11,14 +11,15 @@ else
 fi
 
 #verify file exists
-if [-f "$1" ]
+if [ -f "$1" ]; then
     echo file exits
-else   
+else
     echo file invalid
     exit 1;
 fi
 #verify username exists
-if  grep -r "$2" "$1"; then 
-    echo found 
+if  grep -wq "$2" "$1"; then 
+    echo $2 found 
 else 
-    echo not found
+    echo $2 not found
+fi
