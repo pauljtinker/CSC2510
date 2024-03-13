@@ -27,6 +27,21 @@ else
         [Yy] | [Yy]es )
             echo "Added."
             echo -e "\n$2" >> "$1"
+            read -rp "Would you like to Alphabetize the usernames? (yes/no): " ANSWER2
+            case "$ANSWER2" in
+                [Yy] | [Yy]es )
+                    echo "Alphabetizing usernames."
+                    # Sort the file alphabetically
+                    sort -o "$1" "$1"
+                    ;;
+                [Nn] | [Nn]o )
+                    echo "exiting."
+                    exit
+                    ;;
+                * )
+                    echo "Invalid input"
+                    ;;
+            esac
             exit ;;
         [Nn] | [Nn]o )
             echo "Not added. Exiting."
