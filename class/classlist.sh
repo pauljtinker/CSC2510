@@ -22,4 +22,25 @@ if  grep -wq "$2" "$1"; then
     echo $2 found 
 else 
     echo $2 not found
+    read -p "Would you like to add the username? " ANSWER
+    case "$ANSWER" in
+        [Yy]* )
+            echo "Added"
+            echo "$2" >> "$1"
+            break ;;
+        [Yy]es )
+            echo "Added"
+            echo "$2" >> "$1"
+            break ;;
+        [Nn]* )
+            echo "Not added, exiting"
+            exit ;;
+        [Nn]o )
+            echo "Not added, exiting"
+            exit ;;
+        * )
+            echo "Invalid input. Please enter 'yes' or 'no'."
+            ;;
+    esac
+done
 fi
