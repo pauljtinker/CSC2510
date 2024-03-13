@@ -17,29 +17,22 @@ else
     echo file invalid
     exit 1;
 fi
-#verify username exists
-if  grep -wq "$2" "$1"; then 
-    echo "$2" found 
+# verify username exists
+if grep -wq "$2" "$1"; then 
+    echo "$2" found
 else 
     echo "$2" not found
     read -rp "Would you like to add the username? " ANSWER
     case "$ANSWER" in
-        [Yy]* )
-            echo "Added"
+        [Yy] | [Yy]es )
+            echo "Added."
             echo "$2" >> "$1"
             exit ;;
-        [Yy]es )
-            echo "Added"
-            echo "$2" >> "$1"
-            exit ;;
-        [Nn]* )
-            echo "Not added, exiting"
-            exit ;;
-        [Nn]o )
-            echo "Not added, exiting"
+        [Nn] | [Nn]o )
+            echo "Not added. Exiting."
             exit ;;
         * )
             echo "Invalid input. Please enter 'yes' or 'no'."
-            ;;
+            exit ;;
     esac
 fi
