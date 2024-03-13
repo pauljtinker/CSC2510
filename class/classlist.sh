@@ -26,7 +26,7 @@ else
     case "$ANSWER" in
         [Yy] | [Yy]es )
             echo "Added."
-            echo "$2" >> "$1"
+            echo -e "\n$2" >> "$1"
             exit ;;
         [Nn] | [Nn]o )
             echo "Not added. Exiting."
