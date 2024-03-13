@@ -1,4 +1,4 @@
-#!/bin/bashgi
+#!/bin/bash
 #) verify correct number of arguments was received
 if [ $# -lt 2 ]; then
     echo Invalid number of arguments.
