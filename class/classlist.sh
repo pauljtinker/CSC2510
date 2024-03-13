@@ -26,21 +26,20 @@ else
     case "$ANSWER" in
         [Yy] | [Yy]es )
             echo "Added."
-            echo -e "\n$2" >> "$1"
-            read -rp "Would you like to Alphabetize the usernames? (yes/no): " ANSWER2
+            echo -e "\n$2" >> "$1" 
+            # Sort the file alphabetically
+            read -rp "Would you like to Alphabetize the usernames?: " ANSWER2
             case "$ANSWER2" in
                 [Yy] | [Yy]es )
                     echo "Alphabetizing usernames."
-                    # Sort the file alphabetically
                     sort -o "$1" "$1"
-                    ;;
+                    exit;;
                 [Nn] | [Nn]o )
                     echo "exiting."
-                    exit
-                    ;;
+                    exit;;
                 * )
                     echo "Invalid input"
-                    ;;
+                    exit;;
             esac
             exit ;;
         [Nn] | [Nn]o )
