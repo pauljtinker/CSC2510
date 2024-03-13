@@ -19,19 +19,19 @@ else
 fi
 #verify username exists
 if  grep -wq "$2" "$1"; then 
-    echo $2 found 
+    echo "$2" found 
 else 
-    echo $2 not found
-    read -p "Would you like to add the username? " ANSWER
+    echo "$2" not found
+    read -rp "Would you like to add the username? " ANSWER
     case "$ANSWER" in
         [Yy]* )
             echo "Added"
             echo "$2" >> "$1"
-            break ;;
+            exit ;;
         [Yy]es )
             echo "Added"
             echo "$2" >> "$1"
-            break ;;
+            exit ;;
         [Nn]* )
             echo "Not added, exiting"
             exit ;;
@@ -42,5 +42,4 @@ else
             echo "Invalid input. Please enter 'yes' or 'no'."
             ;;
     esac
-done
 fi
