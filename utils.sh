@@ -14,3 +14,4 @@ grep -n 'sudo' /etc/group
 
 sort food
 
+sort -r food
