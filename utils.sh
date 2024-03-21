@@ -17,3 +17,5 @@ sort food
 sort -r food
 
 sort -k2 food
+
+sort -k3,3nr -k2,2nr food > calo
