@@ -15,3 +15,5 @@ grep -n 'sudo' /etc/group
 sort food
 
 sort -r food
+
+sort -k2 food
