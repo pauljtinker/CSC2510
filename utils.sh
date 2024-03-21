@@ -9,3 +9,5 @@ find /usr | head -n 10
 grep -F 'model name' /proc/cpuinfo
 
 grep -vc 'sudo' /etc/group
+
+grep -n 'sudo' /etc/group
