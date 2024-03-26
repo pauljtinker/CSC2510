@@ -8,3 +8,5 @@ grep -cn 'send' /etc/services
 cat "------------------in food file-------------------------"
 
 cat food |sort
+cat food |sort --key=2
+
